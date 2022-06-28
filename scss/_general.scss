@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @include basic-area;
+  @include font($space-mono, 15px, 400, 25px);
+  margin-top: 97px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+}
+
+@media only screen and (max-width: $mobile) {
+  body {
+    margin-top: 64px;
+  }
+}

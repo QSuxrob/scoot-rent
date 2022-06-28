@@ -1,0 +1,97 @@
+.our-values {
+  &__title {
+    @include basic-area;
+    @include font($space-mono, 48px, 700, 48px);
+    margin-bottom: 105px;
+    letter-spacing: -2px;
+    text-align: center;
+  }
+
+  &__list {
+    @include basic-area;
+    @include flex-display;
+    max-width: 1110px;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__item {
+    max-width: 350px;
+
+    &-title {
+      @include basic-area;
+      @include font($space-mono, 24px, 700, 28px);
+      margin-top: 32px;
+    }
+
+    &-description {
+      @include basic-area;
+      @include font($lexend-deca, 15px, 400, 25px);
+      margin-top: 27px;
+      color: $header-link-color;
+    }
+  }
+
+  &__img {
+    @include basic-area;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    border-radius: 50%
+  }
+
+  &__item-number {
+    @include font($space-mono, 24px, 700, 28px);
+    letter-spacing: -1px;
+    width: 96px;
+    height: 96px;
+    margin-top: -40px;
+    display: inline-block;
+    background-color: $button-color;
+    border-radius: 50%;
+    padding: 34px;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .our-values {
+    &__cotnaienr {
+      max-width: 728px;
+    }
+
+    &__title {
+      margin-bottom: 105px;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      max-width: 457px;
+      margin: 0 auto;
+      margin-bottom: 55px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .our-values {
+    &__container {
+      max-width: 350px;
+    }
+
+    &__title {
+      @include font($space-mono, 32px, 700, 32px);
+      margin-bottom: 46px;
+    }
+
+    &__item-title {
+      margin-top: 16px;
+    }
+  }
+}

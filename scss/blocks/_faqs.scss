@@ -1,0 +1,155 @@
+.faqs {
+  &__container {
+    padding: 120px 20px 160px;
+  }
+
+  &__title {
+    @include basic-area;
+    @include font($space-mono, 48px, 700, 48px);
+    margin-bottom: 64px;
+    color: $benefit-heading;
+    letter-spacing: -2px;
+    text-align: center;
+  }
+
+  &__box {
+    @include flex-display;
+    margin-bottom: 64px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-heading {
+      @include basic-area;
+      @include font($space-mono, 40px, 700, 48px);
+      color: $benefit-heading;
+    }
+  }
+
+  &__list {
+    @include basic-area;
+    
+    &-item {
+      width: 730px;
+      margin-bottom: 16px;
+      padding: 32px 40px;
+      background-color: $faqs-item-bg;
+      position: relative;
+      transition: .5s ease all; 
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        background-color: $faqs-item-hover
+      }
+    }
+  }
+
+  &__item {
+    &-title {
+      @include basic-area;
+      @include font($space-mono, 24px, 700, 28px);
+      letter-spacing: -1px;
+    }
+
+    &-toggle-text {
+      @include basic-area;
+      @include font($lexend-deca, 15px, 400, 25px);
+      display: none;
+      margin-top: 24px;
+      color: $benefit-heading;
+    }
+
+    &--opened {
+      display: flex
+    }
+
+    &-button {
+      @include basic-area;
+      @include basic-bg-img;
+      width: 16px;
+      height: 8px;
+      border: none;
+      background-image: url(../../img/icons/arrow-bottom.svg);
+      background-color: transparent;
+      position: absolute;
+      top: 42px;
+      right: 42px;
+      cursor: pointer;
+    }
+
+    &-button-active {
+      @include basic-area;
+      @include basic-bg-img;
+      width: 16px;
+      height: 8px;
+      border: none;
+      background-image: url(../../img/icons/arrow-bottom.svg);
+      background-color: transparent;
+      position: absolute;
+      top: 42px;
+      right: 42px;
+      cursor: pointer;
+
+      &--opening {
+        background-image: url(../../img/icons/arrow-top.svg);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .faqs {
+    &__container {
+      max-width: 729px;
+      margin: 0 auto;
+      padding: 120px 20px;
+    }
+
+    &__box {
+      flex-direction: column;
+      
+      &-heading {
+        margin: 0 auto;
+        margin-bottom: 32px;
+      }
+    }
+
+    &__list-item {
+      width: 689px;
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .faqs {
+    &__container {
+      max-width: 350px;
+    }
+
+    &__box {
+      margin-bottom: 48px;
+    }
+
+    &__list-item {
+      width: 311px;
+    }
+
+    &__item-title {
+      @include font($space-mono, 18px, 700, 24px);
+      letter-spacing: -1px;
+      margin-right: 32px;
+    }
+  }
+}

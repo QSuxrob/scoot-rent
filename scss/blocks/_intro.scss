@@ -1,0 +1,161 @@
+.intro {
+  margin: 0 auto;
+  padding: 153px 0 152px;
+  position: relative;
+  
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+
+    background-image: url("../img/intro-bg-retina-img.jpg");
+  }
+
+  background: url(../../img/intro-bg-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  &__slogan {
+    @include basic-area;
+    @include font($space-mono, 56px, 700, 1);
+    letter-spacing: -2.5px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    color: $white;
+  }
+
+  &__text-wrapper {
+    max-width: 405px;
+    margin-left: 95px;
+    color: $white;
+    position: relative;
+
+    &::before {
+      @include basic-bg-img;
+      content: "";
+      width: 202px;
+      height: 12px;
+      display: inline-block;
+      position: absolute;
+      top: 48px;
+      right: calc(100% + 57px);
+      background-image: url(../../img/icons/suffix-arrow.svg);
+    }
+
+    &::after {
+      @include basic-bg-img;
+      content: "";
+      width: 447px;
+      height: 138px;
+      display: inline-block;
+      position: absolute;
+      top: 48px;
+      left: calc(100% + 40px);
+      background-image: url(../../img/icons/right-sight-arrow.svg);
+      background-position: center right;
+    }
+  }
+
+  &__description {
+    @include basic-area;
+    @include font($lexend-deca, 15px, 400, 25px);
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .intro {
+    @include basic-area;
+    padding: 137px 0 217px;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+
+      background-image: url("../img/intro-tablet-retina-img.jpg");
+    }
+
+    background-image: url(../../img/intro-tablet-bg-img.jpg);
+
+    &__container {
+      max-width: 613px;
+
+      &::before {
+        @include basic-bg-img;
+        content: "";
+        width: 447px;
+        height: 138px;
+        display: inline-block;
+        position: absolute;
+        left: -127px;
+        bottom: 39px;
+        background-image: url(../../img/icons/right-sight-arrow.svg);
+        background-position: center right;
+      }
+    }
+
+    &__content {
+      max-width: 573px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &__slogan {
+      max-width: 573px;
+      margin-bottom: 24px;
+    }
+
+    &__description {
+      max-width: 573px;
+      margin-bottom: 32px;
+    }
+
+    &__text-wrapper {
+      max-width: 573px;
+      margin: 0 auto;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .intro {
+    @include basic-area;
+    padding: 115px 0 179px;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+
+      background-image: url("../img/intro-retina-mobile-img.jpg");
+    }
+
+    background-image: url(../../img/intro-mobile-bg-img.jpg);
+
+    &__container {
+      max-width: 351px;
+      text-align: center;
+
+      &::before {
+        left: -312px;
+      }
+    }
+
+    &__slogan {
+      @include font($space-mono, 40px, 700, 1);
+      margin-bottom: 24px;
+    }
+  }
+}

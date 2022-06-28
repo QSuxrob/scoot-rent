@@ -1,0 +1,135 @@
+.proccess {
+  &__container {
+    padding: 160px 20px 200px;
+  }
+
+  &__list {
+    @include basic-area;
+    @include flex-display;
+    justify-content: space-between;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 974px;
+      height: 15px;
+      background-color: $toggle-link-color;
+      position: absolute;
+      top: calc(96px / 2);
+      right: 300px;
+      z-index: -1;
+    }
+
+    &-phone-tap::before {
+      background-image: url(../../img/icons/phone-tap.svg);
+    }
+
+    &-scooter::before {
+      background-image: url(../../img/icons/scooter.svg);
+    }
+
+    &-delivery::before {
+      background-image: url(../../img/icons/enjoy-ride.svg);
+    }
+
+    &-item {
+      @include basic-area;
+      max-width: 350px;
+
+      &::before {
+        content: "";
+        width: 96px;
+        height: 96px;
+        display: block;
+        margin-bottom: 40px;
+        background-color: $button-color;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
+
+  &__item {
+    &-title {
+      @include basic-area;
+      @include font($space-mono, 24px, 700, 28px);
+      letter-spacing: -1px;
+      margin-bottom: 27px;
+    }
+
+    &-description {
+      @include basic-area;
+      @include font($lexend-deca, 15px, 400, 25px);
+      color: $header-link-color;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .proccess {
+    &__container {
+      max-width: 613px;
+      padding-top: 122px;
+      padding-bottom: 145px;
+    }
+
+    &__list {
+      flex-direction: column;
+
+      &::before {
+        transform: rotate(90deg);
+        position: absolute;
+        top: -96px;
+        right: calc((96px / 2) - (15px / 2));
+      }
+
+      &-item {
+        @include flex-display;
+        max-width: 573px;
+        margin-bottom: 40px;
+
+        &::before {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__text-wrapper {
+      max-width: 398px;
+      margin-left: 79px;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .proccess {
+    &__container {
+      max-width: 350px;
+      padding: 120px 20px;
+    }
+
+    &__list {
+      &-item {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 48px;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &__item-title { 
+      font-size: 20px;
+    }
+
+    &__text-wrapper {
+      @include basic-area;
+      margin-top: 24px;
+      text-align: center;
+    }
+  }
+}

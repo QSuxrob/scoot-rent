@@ -1,0 +1,15 @@
+.main-button {
+  padding: 11px 39px;
+  color: $white;
+  background-color: $button-color;
+  border: 3px solid transparent;
+  line-height: 25px;
+  transition: .5s ease all;
+  z-index: 1;
+}
+
+.main-button:hover {
+  color: $button-color;
+  background-color: transparent;
+  border: 3px solid $button-color;
+}

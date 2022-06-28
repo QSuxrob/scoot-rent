@@ -1,0 +1,37 @@
+.about-intro {
+  @include basic-bg-img;
+  margin: 0 auto;
+  background-image: url(../../img/about-intro-bg-img.jpg);
+  
+  &__container {
+    padding: 72px 20px;
+  }
+
+  &__title {
+    @include basic-area;
+    @include font($space-mono, 56px, 700, 56px);
+    color: $white;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .about-intro {
+    background-image: url(../../img/about-intro-tablet-bg-img.jpg);
+
+    &__container {
+      max-width: 729px;
+      padding: 72px 97px;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .about-intro {
+    background-image: url(../../img/about-intro-mobile-bg-img.jpg);
+
+    &__container {
+      padding: 72px 32px;
+      text-align: center;
+    }
+  }
+}
